@@ -1,0 +1,404 @@
+@custom-variant dark (&:is(.dark *));
+
+/* Theme configuration for YOONIT CRM */
+:root {
+  --font-size: 14px;
+  --font-heading: 'Public Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* ── Type scale (1.25 ratio – Major Third) ── */
+  --text-h1: 50px;
+  --text-h2: 40px;
+  --text-h3: 32px;
+  --text-h4: 25px;
+  --text-h5: 20px;
+  --text-base: 14px;
+  --text-sm: 13px;
+  --text-xs: 11px;
+
+  /* ── Radix Indigo scale ── */
+  --indigo-1: #fdfdfe;
+  --indigo-2: #f7faff;
+  --indigo-3: #ecf2fd;
+  --indigo-4: #dfeaff;
+  --indigo-5: #cee0ff;
+  --indigo-6: #bbd3fe;
+  --indigo-7: #a4c1f4;
+  --indigo-8: #84a8e9;
+  --indigo-9: #1e4daa;
+  --indigo-10: #0e3c98;
+  --indigo-11: #3060bf;
+  --indigo-12: #1a2f58;
+
+  /* ── Radix Slate scale ── */
+  --slate-1: #fcfcfd;
+  --slate-2: #f9f9fb;
+  --slate-3: #f0f0f3;
+  --slate-4: #e8e8ec;
+  --slate-5: #e0e1e6;
+  --slate-6: #d9d9e0;
+  --slate-7: #cdced6;
+  --slate-8: #b9bbc6;
+  --slate-9: #8b8d98;
+  --slate-10: #80838d;
+  --slate-11: #60646c;
+  --slate-12: #1c2024;
+
+  /* ── Semantic: Surfaces / Backgrounds ── */
+  --bg-app: var(--slate-3);          /* app shell, topbar, icon sidebar */
+  --bg-surface: #ffffff;             /* cards, panels, main content */
+  --bg-raised: var(--slate-1);       /* slightly elevated: input bg, kbd, checkboxes */
+  --bg-subtle: var(--slate-2);       /* settings sidebar, table header background */
+  --bg-muted: var(--slate-3);        /* chips, neutral badges, pill-tab inactive hover */
+  --bg-hover: var(--slate-3);        /* generic neutral hover */
+  --bg-selected: var(--indigo-2);      /* selected table row, subtle highlight */
+  --bg-active: var(--indigo-3);        /* active menu item, active tab bg */
+  --bg-active-hover: var(--indigo-4);  /* active icon expanded state */
+
+  /* ── Semantic: Text ── */
+  --text-primary: var(--slate-12);   /* headings, body copy, high-contrast text */
+  --text-secondary: var(--slate-11); /* descriptions, labels, secondary info */
+  --text-muted: var(--slate-9);      /* placeholders, hints, timestamps, column headers */
+  --text-disabled: var(--slate-8);   /* disabled pagination arrows, faded controls */
+  --text-on-accent: #ffffff;         /* text on solid accent backgrounds */
+
+  /* ── Semantic: Borders ── */
+  --border-subtle: var(--slate-4);   /* light dividers, section separators */
+  --border-default: var(--slate-6);  /* input borders, card borders, panel borders */
+  --border-strong: var(--slate-7);   /* button borders, emphasized borders */
+
+  /* ── Semantic: Accent (interactive / brand indigo) ── */
+  --accent-solid: var(--indigo-9);         /* primary buttons, avatar bg, toggle on */
+  --accent-solid-hover: var(--indigo-10);  /* primary button hover */
+  --accent-text: var(--indigo-11);         /* links, active breadcrumbs, accent labels */
+  --accent-bg: var(--indigo-3);            /* active menu bg, selected badge bg */
+  --accent-bg-subtle: var(--indigo-2);     /* row hover with accent tint */
+  --accent-bg-hover: var(--indigo-1);      /* very light accent hover */
+  --accent-line: var(--indigo-6);          /* focus borders, accent underlines */
+
+  /* ── Semantic: Status / Feedback ── */
+  --success: #30a46c;               /* online indicator, active badge */
+  --success-bg: #e8f5e9;            /* success badge background */
+  --danger: #e5484d;                /* error text, destructive */
+  --danger-hover: #dc3d43;          /* danger hover */
+  --danger-bg: #fff1f2;             /* delete hover background */
+  --warning: #f5a623;               /* star ratings, warnings */
+  --toggle-off: var(--slate-7);     /* toggle switch off state */
+
+  /* ── Semantic: Tags (decorative, not blue/slate) ── */
+  --tag-trader: var(--indigo-8);      /* trader tag dot */
+  --tag-provider: #f78d1d;          /* provider/IB tag dot */
+  --tag-copier: #8b5cf6;            /* copier tag dot */
+
+  /* ── Pill-tab active (dark pill) ── */
+  --pill-active-bg: var(--slate-12);
+  --pill-active-text: #ffffff;
+
+  /* ── Resize handle ── */
+  --resize-handle: var(--slate-8);
+  --resize-handle-hover: var(--slate-9);
+
+  /* ── Keep existing framework tokens mapped ── */
+  --background: var(--bg-surface);
+  --foreground: var(--text-primary);
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-surface);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--accent-solid);
+  --primary-foreground: var(--text-on-accent);
+  --secondary: var(--bg-subtle);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--bg-muted);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--bg-muted);
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--danger);
+  --destructive-foreground: var(--text-on-accent);
+  --border: var(--border-default);
+  --input: transparent;
+  --input-background: var(--bg-subtle);
+  --switch-background: var(--toggle-off);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --ring: var(--slate-9);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: var(--bg-subtle);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--accent-solid);
+  --sidebar-primary-foreground: var(--text-on-accent);
+  --sidebar-accent: var(--bg-muted);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--border-subtle);
+  --sidebar-ring: var(--slate-9);
+}
+
+.dark {
+  /* ── Radix Slate Dark scale ── */
+  --slate-1: #111113;
+  --slate-2: #18191b;
+  --slate-3: #212225;
+  --slate-4: #272a2d;
+  --slate-5: #2e3135;
+  --slate-6: #363a3f;
+  --slate-7: #43484e;
+  --slate-8: #5a6169;
+  --slate-9: #696e77;
+  --slate-10: #777b84;
+  --slate-11: #b0b4ba;
+  --slate-12: #edeef0;
+
+  /* ── Radix Indigo Dark scale ── */
+  --indigo-1: #0c111c;
+  --indigo-2: #111725;
+  --indigo-3: #172448;
+  --indigo-4: #1d2e61;
+  --indigo-5: #243974;
+  --indigo-6: #2d4484;
+  --indigo-7: #375098;
+  --indigo-8: #405eb2;
+  --indigo-9: #3d63dd;
+  --indigo-10: #3f5cb0;
+  --indigo-11: #93b4ff;
+  --indigo-12: #d5e2ff;
+
+  /* ── Semantic: Surfaces / Backgrounds ── */
+  --bg-app: var(--slate-1);
+  --bg-surface: var(--slate-2);
+  --bg-raised: var(--slate-3);
+  --bg-subtle: var(--slate-3);
+  --bg-muted: var(--slate-4);
+  --bg-hover: var(--slate-4);
+  --bg-selected: var(--indigo-3);
+  --bg-active: var(--indigo-4);
+  --bg-active-hover: var(--indigo-5);
+
+  /* ── Semantic: Text ── */
+  --text-primary: var(--slate-12);
+  --text-secondary: var(--slate-11);
+  --text-muted: var(--slate-9);
+  --text-disabled: var(--slate-7);
+  --text-on-accent: #ffffff;
+
+  /* ── Semantic: Borders ── */
+  --border-subtle: var(--slate-4);
+  --border-default: var(--slate-6);
+  --border-strong: var(--slate-7);
+
+  /* ── Semantic: Accent (interactive / brand indigo) ── */
+  --accent-solid: var(--indigo-9);
+  --accent-solid-hover: var(--indigo-10);
+  --accent-text: var(--indigo-11);
+  --accent-bg: var(--indigo-4);
+  --accent-bg-subtle: var(--indigo-3);
+  --accent-bg-hover: var(--indigo-2);
+  --accent-line: var(--indigo-7);
+
+  /* ── Semantic: Status / Feedback ── */
+  --success: #30a46c;
+  --success-bg: #132d21;
+  --danger: #e5484d;
+  --danger-hover: #dc3d43;
+  --danger-bg: #3c1618;
+  --warning: #f5a623;
+  --toggle-off: var(--slate-7);
+
+  /* ── Pill-tab active ── */
+  --pill-active-bg: var(--slate-12);
+  --pill-active-text: var(--slate-1);
+
+  /* ── Resize handle ── */
+  --resize-handle: var(--slate-7);
+  --resize-handle-hover: var(--slate-8);
+
+  /* ── Framework tokens (mapped) ── */
+  --background: var(--bg-surface);
+  --foreground: var(--text-primary);
+  --card: var(--bg-surface);
+  --card-foreground: var(--text-primary);
+  --popover: var(--bg-surface);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--accent-solid);
+  --primary-foreground: var(--text-on-accent);
+  --secondary: var(--bg-subtle);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--bg-muted);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--bg-muted);
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--danger);
+  --destructive-foreground: var(--text-on-accent);
+  --border: var(--border-default);
+  --input: transparent;
+  --input-background: var(--bg-subtle);
+  --switch-background: var(--toggle-off);
+  --ring: var(--slate-8);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: var(--bg-subtle);
+  --sidebar-foreground: var(--text-primary);
+  --sidebar-primary: var(--accent-solid);
+  --sidebar-primary-foreground: var(--text-on-accent);
+  --sidebar-accent: var(--bg-muted);
+  --sidebar-accent-foreground: var(--text-primary);
+  --sidebar-border: var(--border-subtle);
+  --sidebar-ring: var(--slate-8);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Overlay scrollbar – sits on top of content, fades when idle */
+  .overlay-scrollbar {
+    overflow-y: overlay;
+    overflow-y: auto;
+    scrollbar-gutter: auto;
+  }
+  .overlay-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    position: absolute;
+  }
+  .overlay-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .overlay-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 3px;
+    transition: background 0.2s;
+  }
+  .overlay-scrollbar:hover::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .overlay-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.45);
+  }
+
+  .dark .overlay-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+  }
+  .dark .overlay-scrollbar:hover::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+  }
+  .dark .overlay-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  /**
+  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
+  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
+  */
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  h1 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h1);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.5;
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h2);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.5;
+  }
+
+  h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h3);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.5;
+  }
+
+  h4 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h4);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.5;
+  }
+
+  h5 {
+    font-family: var(--font-heading);
+    font-size: var(--text-h5);
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.5;
+  }
+
+  label {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  button {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+  }
+
+  input {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+  }
+}
